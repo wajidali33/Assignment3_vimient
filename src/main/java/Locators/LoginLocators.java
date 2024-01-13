@@ -9,7 +9,7 @@ public class LoginLocators {
     private String EMAIL_ID="email";
 
     private String PASSWORD_ID="password";
-    private String LOGIN_BUTTON_ID_LINKTEXT="Log In";
+    private String LOGIN_BUTTON_XPATH="//button[@type='submit']";
 
     public LoginLocators(WebDriver driver){
         this.driver= driver;
@@ -21,7 +21,7 @@ public class LoginLocators {
         return driver.findElement(By.id(PASSWORD_ID));
     }
     public WebElement getLoginButton(){
-        return driver.findElement(By.linkText(LOGIN_BUTTON_ID_LINKTEXT));
+        return driver.findElement(By.xpath(LOGIN_BUTTON_XPATH));
     }
 
 }
