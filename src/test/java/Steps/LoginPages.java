@@ -23,7 +23,7 @@ public class LoginPages {
     }
 
     @When("user insert correct email {string}")
-    public void eneterEmail(String email){
+    public void enterEmail(String email){
         loginLocators.getEmail().sendKeys(email);
     }
     @And("user insert correct password {string}")
