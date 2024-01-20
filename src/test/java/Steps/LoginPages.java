@@ -5,8 +5,15 @@ import com.google.j2objc.annotations.Weak;
 import core.WebDriverHook;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class LoginPages {
     private LoginLocators loginLocators;
@@ -35,8 +42,21 @@ public class LoginPages {
         loginLocators.getLoginButton().click();
     }
 
-    @And("user select senior")
-    public void clickSenior(){
-        loginLocators.getSenior().click();
+    @Then("user will successfully login {string}")
+    public void user_will_successfully_login(String string) throws InterruptedException {
+        Wait<WebDriver> wait = new WebDriverWait(webDriverHook.getDriver(), Duration.ofSeconds(5));
+        wait.until(d -> loginLocators.getLoginMEssage().isDisplayed());
+        Assert.assertEquals(string, loginLocators.getLoginMEssage().getText());
+        loginLocators.getClosePopup().click();
+
     }
+    @And("use will click to select the senior")
+    public void user_will_click_to_senior() {
+        Wait<WebDriver> wait = new WebDriverWait(webDriverHook.getDriver(), Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.visibilityOf(loginLocators.getSeniorClick()));
+        loginLocators.getSeniorClick().click();
+    }
+
+
+
 }

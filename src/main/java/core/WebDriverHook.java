@@ -45,8 +45,10 @@ package core;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 public class WebDriverHook {
 
@@ -59,6 +61,9 @@ public class WebDriverHook {
         driver = new ChromeDriver();
         driver.get(myProp.getProperty("base_url_qa") );
         driver.manage().window().maximize();
+//        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+
     }
 
     public static WebDriverHook getInstance() {
