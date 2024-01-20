@@ -6,16 +6,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 public class LoginLocators {
     private  WebDriver driver;
     private String EMAIL_ID="email";
 
     private String PASSWORD_ID="password";
     private String LOGIN_BUTTON_XPATH="//button[@type='submit']";
-    private String CLICKSENIOR_XPATH="//*[@id='root']/div[3]/div/div[2]/div[2]/div/div/table/tbody/tr[5]";
-
+    private String CLICKSENIOR_XPATH="//table[@aria-label='a dense table']//td[contains(text(),'Mujtaba0129')]";
+    //table[@id='tblData']//td')]
     private String LOGINMESSAGE_CSSLOCATOR=".MuiAlert-message";
-    private String CLOSEPOPUP_XPATH="//*[@id='root']/div[3]/div/div[3]/button/svg";
 
     public LoginLocators(WebDriver driver){
         this.driver= driver;
@@ -34,9 +35,6 @@ public class LoginLocators {
     }
     public WebElement getLoginMEssage(){
         return driver.findElement(By.cssSelector(LOGINMESSAGE_CSSLOCATOR));
-    }
-    public WebElement getClosePopup(){
-        return driver.findElement(By.xpath(CLOSEPOPUP_XPATH));
     }
 
 

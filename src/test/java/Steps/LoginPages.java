@@ -47,15 +47,13 @@ public class LoginPages {
         Wait<WebDriver> wait = new WebDriverWait(webDriverHook.getDriver(), Duration.ofSeconds(5));
         wait.until(d -> loginLocators.getLoginMEssage().isDisplayed());
         Assert.assertEquals(string, loginLocators.getLoginMEssage().getText());
-        loginLocators.getClosePopup().click();
-
     }
     @And("use will click to select the senior")
-    public void user_will_click_to_senior() {
-        Wait<WebDriver> wait = new WebDriverWait(webDriverHook.getDriver(), Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.visibilityOf(loginLocators.getSeniorClick()));
-        loginLocators.getSeniorClick().click();
-    }
+    public void user_will_click_to_senior() throws InterruptedException {
+//        Wait<WebDriver> wait = new WebDriverWait(webDriverHook.getDriver(), Duration.ofSeconds(20));
+//        wait.until(ExpectedConditions.(loginLocators.getSeniorClick()));
+        Thread.sleep(10000);
+        loginLocators.getSeniorClick().click();}
 
 
 
