@@ -49,10 +49,9 @@ public class LoginPages {
         Assert.assertEquals(string, loginLocators.getLoginMEssage().getText());
     }
     @And("use will click to select the senior")
-    public void user_will_click_to_senior() throws InterruptedException {
-//        Wait<WebDriver> wait = new WebDriverWait(webDriverHook.getDriver(), Duration.ofSeconds(20));
-//        wait.until(ExpectedConditions.(loginLocators.getSeniorClick()));
-        Thread.sleep(10000);
+    public void user_will_click_to_senior(){
+        Wait<WebDriver> wait = new WebDriverWait(webDriverHook.getDriver(), Duration.ofSeconds(10));
+        wait.until(d -> loginLocators.getSeniorClick().isDisplayed());
         loginLocators.getSeniorClick().click();}
 
 
