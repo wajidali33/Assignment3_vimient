@@ -10,6 +10,8 @@ public class LoginLocators {
 
     private String PASSWORD_ID="password";
     private String LOGIN_BUTTON_XPATH="//button[@type='submit']";
+    private String CLICKSENIOR_CSSSELECTOR=".MuiTableRow-root:nth-child(5)";
+
 
     public LoginLocators(WebDriver driver){
         this.driver= driver;
@@ -22,6 +24,9 @@ public class LoginLocators {
     }
     public WebElement getLoginButton(){
         return driver.findElement(By.xpath(LOGIN_BUTTON_XPATH));
+    }
+    public  WebElement getSenior(){
+        return driver.findElement(By.cssSelector(CLICKSENIOR_CSSSELECTOR));
     }
 
 }

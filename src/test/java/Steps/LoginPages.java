@@ -34,4 +34,9 @@ public class LoginPages {
     public  void clickLoginButton(){
         loginLocators.getLoginButton().click();
     }
+
+    @And("user select senior")
+    public void clickSenior(){
+        loginLocators.getSenior().click();
+    }
 }
