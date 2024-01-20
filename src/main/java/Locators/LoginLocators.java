@@ -15,7 +15,7 @@ public class LoginLocators {
     private String CLICKSENIOR_XPATH="//*[@id='root']/div[3]/div/div[2]/div[2]/div/div/table/tbody/tr[5]";
 
     private String LOGINMESSAGE_CSSLOCATOR=".MuiAlert-message";
-    private String CLOSEPOPUP_XPATH="//*[@id='root']/div[3]/div/div[3]/button/svg"
+    private String CLOSEPOPUP_XPATH="//*[@id='root']/div[3]/div/div[3]/button/svg";
 
     public LoginLocators(WebDriver driver){
         this.driver= driver;
@@ -36,7 +36,7 @@ public class LoginLocators {
         return driver.findElement(By.cssSelector(LOGINMESSAGE_CSSLOCATOR));
     }
     public WebElement getClosePopup(){
-        return driver.findElement(By.xpath("//*[@id=\"root\"]/div[3]/div/div[3]/button/svg"));
+        return driver.findElement(By.xpath(CLOSEPOPUP_XPATH));
     }
 
 
